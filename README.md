@@ -89,9 +89,11 @@ reference them like this:*
 
 ## Screenshots
 
-![Homepage](https://github.com/Malik-Taha-Y/greenroots/blob/main/screenshots/home.png?raw=true)
-![Plant wizard](https://github.com/Malik-Taha-Y/greenroots/blob/main/screenshots/plant-wizard.png?raw=true)
-![Results page](https://github.com/Malik-Taha-Y/greenroots/blob/main/screenshots/results.png?raw=true)
+## Screenshots
+
+![Homepage](https://github.com/Malik-Taha-Y/greenroots/blob/main/home.png?raw=true)
+![Plant wizard](https://github.com/Malik-Taha-Y/greenroots/blob/main/plant-wizard.png?raw=true)
+![Results page](https://github.com/Malik-Taha-Y/greenroots/blob/main/results.png?raw=true)
 
 ```
 
