@@ -81,9 +81,6 @@ generic:
 
 ## Screenshots
 
-*Add 3+ screenshots here after you deploy — see the "Screenshots to take" checklist in the
-Deployment section below. Drop the image files into a `/screenshots` folder in the repo and
-reference them like this:*
 
 ```markdown
 
@@ -91,9 +88,12 @@ reference them like this:*
 
 ## Screenshots
 
-![Homepage](https://github.com/Malik-Taha-Y/greenroots/blob/main/home.png?raw=true)
-![Plant wizard](https://github.com/Malik-Taha-Y/greenroots/blob/main/plant-wizard.png?raw=true)
-![Results page](https://github.com/Malik-Taha-Y/greenroots/blob/main/results.png?raw=true)
+<img width="1226" height="1080" alt="homepage" src="https://github.com/user-attachments/assets/6e1a70f6-62f1-4567-bb6b-61c8608a813a" />
+
+<img width="1226" height="1080" alt="interference" src="https://github.com/user-attachments/assets/6de433e6-bee2-486b-8313-cae16edb0834" />
+
+<img width="1135" height="1600" alt="result" src="https://github.com/user-attachments/assets/6fcf1ed4-9fb7-4b7b-809b-20f3702efbde" />
+
 
 ```
 
