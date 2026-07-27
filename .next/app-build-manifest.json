@@ -1,0 +1,59 @@
+{
+  "pages": {
+    "/_not-found/page": [
+      "static/chunks/webpack-853cef2f5799cbff.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-9bcfe95f89d4b2e1.js",
+      "static/chunks/main-app-c1af123a919e1232.js",
+      "static/chunks/app/_not-found/page-32c70da5a397ed57.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-853cef2f5799cbff.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-9bcfe95f89d4b2e1.js",
+      "static/chunks/main-app-c1af123a919e1232.js",
+      "static/css/58c30baad6264a55.css",
+      "static/chunks/app/layout-4c62098d9bbdbaad.js"
+    ],
+    "/farmer/page": [
+      "static/chunks/webpack-853cef2f5799cbff.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-9bcfe95f89d4b2e1.js",
+      "static/chunks/main-app-c1af123a919e1232.js",
+      "static/chunks/972-c297c90601cf06f0.js",
+      "static/chunks/app/farmer/page-e98dd68b32d4eb6b.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-853cef2f5799cbff.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-9bcfe95f89d4b2e1.js",
+      "static/chunks/main-app-c1af123a919e1232.js",
+      "static/chunks/972-c297c90601cf06f0.js",
+      "static/chunks/app/page-12f29310293892fa.js"
+    ],
+    "/results/[id]/page": [
+      "static/chunks/webpack-853cef2f5799cbff.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-9bcfe95f89d4b2e1.js",
+      "static/chunks/main-app-c1af123a919e1232.js",
+      "static/chunks/972-c297c90601cf06f0.js",
+      "static/chunks/app/results/[id]/page-ae9d2d8b880ea153.js"
+    ],
+    "/plant/page": [
+      "static/chunks/webpack-853cef2f5799cbff.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-9bcfe95f89d4b2e1.js",
+      "static/chunks/main-app-c1af123a919e1232.js",
+      "static/chunks/972-c297c90601cf06f0.js",
+      "static/chunks/app/plant/page-3bc8ce55ce4b1133.js"
+    ],
+    "/history/page": [
+      "static/chunks/webpack-853cef2f5799cbff.js",
+      "static/chunks/fd9d1056-9f91b5e418130764.js",
+      "static/chunks/117-9bcfe95f89d4b2e1.js",
+      "static/chunks/main-app-c1af123a919e1232.js",
+      "static/chunks/972-c297c90601cf06f0.js",
+      "static/chunks/app/history/page-e1ac4ea7ecbb0925.js"
+    ]
+  }
+}

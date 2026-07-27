@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenAI } from "@google/genai";
 import {
   PLANT_SYSTEM_PROMPT,
   FARMER_SYSTEM_PROMPT,
@@ -15,10 +15,10 @@ function extractJson(text: string) {
 }
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.ANTHROPIC_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
-      { error: "Server is missing ANTHROPIC_API_KEY. Add it in your hosting provider's environment variables." },
+      { error: "Server is missing GEMINI_API_KEY. Add it in your hosting provider's environment variables." },
       { status: 500 }
     );
   }
@@ -28,8 +28,8 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  const client = new Anthropic({ apiKey });
-  const model = process.env.ANTHROPIC_MODEL || "claude-sonnet-5";
+  const client = new GoogleGenAI({ apiKey });
+  const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 
   try {
     let system: string;
@@ -51,21 +51,24 @@ export async function POST(req: NextRequest) {
       userPrompt = buildFarmerUserPrompt({ region, crop });
     }
 
-    const message = await client.messages.create({
+    const response = await client.models.generateContent({
       model,
-      max_tokens: 1200,
-      system,
-      messages: [{ role: "user", content: userPrompt }],
+      contents: userPrompt,
+      config: {
+        systemInstruction: system,
+        maxOutputTokens: 1200,
+        responseMimeType: "application/json",
+      },
     });
 
-    const textBlock = message.content.find((b) => b.type === "text");
-    if (!textBlock || textBlock.type !== "text") {
+    const text = response.text;
+    if (!text) {
       return NextResponse.json({ error: "No response from model." }, { status: 502 });
     }
 
     let parsed;
     try {
-      parsed = extractJson(textBlock.text);
+      parsed = extractJson(text);
     } catch {
       return NextResponse.json(
         { error: "Model returned an unexpected format. Please try again." },
