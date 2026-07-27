@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { GoogleGenAI } from "@google/genai";
 import {
   PLANT_SYSTEM_PROMPT,
   FARMER_SYSTEM_PROMPT,
@@ -15,10 +14,10 @@ function extractJson(text: string) {
 }
 
 export async function POST(req: NextRequest) {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
     return NextResponse.json(
-      { error: "Server is missing GEMINI_API_KEY. Add it in your hosting provider's environment variables." },
+      { error: "Server is missing GROQ_API_KEY. Add it in your hosting provider's environment variables." },
       { status: 500 }
     );
   }
@@ -28,8 +27,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
-  const client = new GoogleGenAI({ apiKey });
-  const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+  const model = process.env.GROQ_MODEL || "openai/gpt-oss-120b";
 
   try {
     let system: string;
@@ -51,17 +49,32 @@ export async function POST(req: NextRequest) {
       userPrompt = buildFarmerUserPrompt({ region, crop });
     }
 
-    const response = await client.models.generateContent({
-      model,
-      contents: userPrompt,
-      config: {
-        systemInstruction: system,
-        maxOutputTokens: 1200,
-        responseMimeType: "application/json",
+    const groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
       },
+      body: JSON.stringify({
+        model,
+        max_tokens: 1200,
+        messages: [
+          { role: "system", content: system },
+          { role: "user", content: userPrompt },
+        ],
+      }),
     });
 
-    const text = response.text;
+    if (!groqRes.ok) {
+      const errText = await groqRes.text().catch(() => "");
+      return NextResponse.json(
+        { error: `Groq API error (${groqRes.status}): ${errText || "Something went wrong calling the AI model."}` },
+        { status: 502 }
+      );
+    }
+
+    const data = await groqRes.json();
+    const text: string | undefined = data?.choices?.[0]?.message?.content;
     if (!text) {
       return NextResponse.json({ error: "No response from model." }, { status: 502 });
     }
