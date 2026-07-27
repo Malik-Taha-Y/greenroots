@@ -86,9 +86,11 @@ Deployment section below. Drop the image files into a `/screenshots` folder in t
 reference them like this:*
 
 ```markdown
-![Uploading image.png…]()
+
+![Homepage](./screenshots/home.png)
 ![Plant wizard](./screenshots/plant-wizard.png)
 ![Results page](./screenshots/results.png)
+
 ```
 
 ## Known limitations
