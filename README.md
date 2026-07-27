@@ -87,9 +87,9 @@ reference them like this:*
 
 ```markdown
 
-![Homepage](./screenshots/home.png)
-![Plant wizard](./screenshots/plant-wizard.png)
-![Results page](./screenshots/results.png)
+![home](./screenshots/home.png)
+![plant-wizard](./screenshots/plant-wizard.png)
+![results](./screenshots/results.png)
 
 ```
 
