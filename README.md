@@ -86,7 +86,7 @@ Deployment section below. Drop the image files into a `/screenshots` folder in t
 reference them like this:*
 
 ```markdown
-![Homepage](./screenshots/home.png)
+![Uploading image.png…]()
 ![Plant wizard](./screenshots/plant-wizard.png)
 ![Results page](./screenshots/results.png)
 ```
@@ -110,7 +110,7 @@ git clone <your-repo-url>
 cd greenroots
 npm install
 cp .env.example .env.local
-# edit .env.local and paste your real ANTHROPIC_API_KEY
+# edit .env.local and paste your real GROQ_API_KEY
 npm run dev
 ```
 
@@ -124,8 +124,8 @@ Open http://localhost:3000.
    `greenroots` repo.
 3. Vercel auto-detects Next.js — leave the build settings as default.
 4. Before deploying, open **Environment Variables** and add:
-   - `ANTHROPIC_API_KEY` = your real key from https://console.anthropic.com/
-   - `ANTHROPIC_MODEL` = `claude-sonnet-5` (optional — this is already the default)
+   - `GROQ_API_KEY` = your real key from https://console.groq.com/
+   - `GROQ_MODEL` = `llama3-70b` (or whichever Groq model you prefer)
 5. Click **Deploy**. Once it finishes, Vercel gives you a live URL like
    `https://greenroots-yourname.vercel.app`.
 6. Paste that URL at the top of this README (replacing the placeholder) and push the update.
