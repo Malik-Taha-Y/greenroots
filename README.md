@@ -81,21 +81,17 @@ generic:
 
 ## Screenshots
 
-
-```markdown
-
-## Screenshots
-
-## Screenshots
-
-<img width="1226" height="1080" alt="homepage" src="https://github.com/user-attachments/assets/6e1a70f6-62f1-4567-bb6b-61c8608a813a" />
-
-<img width="1226" height="1080" alt="interference" src="https://github.com/user-attachments/assets/6de433e6-bee2-486b-8313-cae16edb0834" />
-
-<img width="1135" height="1600" alt="result" src="https://github.com/user-attachments/assets/6fcf1ed4-9fb7-4b7b-809b-20f3702efbde" />
+Interference
+<img width="1226" height="1080" alt="homepage" src="https://github.com/user-attachments/assets/21742669-a3fa-4742-835c-8040345bfc38" />
+<img width="1226" height="1080" alt="interference" src="https://github.com/user-attachments/assets/506aded8-272c-4606-98fe-5baa5833caed" />
+Result
+<img width="1135" height="1600" alt="result" src="https://github.com/user-attachments/assets/c564c79a-9c0c-4640-9022-aae3f466ce27" />
 
 
-```
+
+
+
+
 
 ## Known limitations
 
