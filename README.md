@@ -1,6 +1,6 @@
 # GreenRoots 🌱
 
-**Live app:** `PASTE-YOUR-VERCEL-URL-HERE` *(update this line after you deploy — see Deployment below)*
+**Live app:** https://greenroots-51rqw3oxh-botmon1.vercel.app
 
 ## The problem, and who it's for
 
